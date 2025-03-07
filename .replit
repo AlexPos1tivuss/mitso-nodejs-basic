@@ -1,8 +1,8 @@
 modules = ["nodejs-20"]
-run = "node src/cli/env.js"
+run = "find src -name '*.js' -exec node {} +"
 
 [nix]
 channel = "stable-24_05"
 
 [deployment]
-run = ["sh", "-c", "node src/cli/env.js"]
+run = ["sh", "-c", "find src -name '*.js' -exec node {} +"]
