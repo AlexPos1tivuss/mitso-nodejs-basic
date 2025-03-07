@@ -1,5 +1,7 @@
 const read = async () => {
-    // Write your code here 
+    const fs = require('fs');
+    const stream = fs.createReadStream('files/fileToRead.txt');
+    stream.pipe(process.stdout);
 };
 
 await read();
