@@ -1,10 +1,10 @@
 const parseEnv = () => {
-    const envVariables = Object.keys(process.env);
+    const envVariables = Object.entries(process.env);
     const mitsoVariables = envVariables
-        .filter(key => key.startsWith('MITSO_'))
-        .map(key => `${key}=${process.env[key]}`)
+        .filter(([key]) => key.startsWith('MITSO_'))
+        .map(([key, value]) => `${key}=${value}`)
         .join('; ');
     console.log(mitsoVariables);
 };
 
-parseEnv();
+await parseEnv();
